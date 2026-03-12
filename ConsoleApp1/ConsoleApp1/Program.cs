@@ -1,17 +1,37 @@
-﻿public class InputValidator
+﻿using System.Collections;
+
+public class InputValidator
 {
     public static void Main(string[] args)
     {
-        int enteredNumber = GetNumberFromUser();
-        Console.Write("Entered value: " + enteredNumber);
+        ArrayList enteredNumbers = new ArrayList();
+        int enteredNumber = 0;
+        while (enteredNumber >= 0)
+        {
+            enteredNumber = GetNumberFromUser();
+            if (enteredNumber >= 0)
+            {
+                Console.Write("Entered value: " + enteredNumber + "\n");
+                enteredNumbers.Add(enteredNumber);
+            }
+            else
+            {
+                Console.Write("Quit");
+            }
+        }
     }
 
     public static int GetNumberFromUser()
     {
         while (true)
         {
-            Console.Write("Please enter a number: ");
+            Console.Write("Please enter a number (q to quit): ");
             string input = Console.ReadLine();
+
+            if (input == "q")
+            {
+                return -1;
+            }
 
             try
             {
