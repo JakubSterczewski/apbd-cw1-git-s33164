@@ -16,7 +16,7 @@ public class InputValidator
             }
             else
             {
-                Console.WriteLine("Quit");
+                Console.WriteLine("Quit!!!");
             }
         }
         
