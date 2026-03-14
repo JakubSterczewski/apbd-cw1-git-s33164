@@ -21,6 +21,8 @@ public class InputValidator
         }
         
         Console.WriteLine("Average: " + CalculateAverage(enteredNumbers));
+
+        Console.WriteLine("Min: " + CalculateMin(enteredNumbers));
     }
 
     public static int CalculateMax(List<int> numbers)
