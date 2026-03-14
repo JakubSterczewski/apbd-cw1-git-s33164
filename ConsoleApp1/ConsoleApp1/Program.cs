@@ -23,6 +23,12 @@ public class InputValidator
         Console.WriteLine("Average: " + CalculateAverage(enteredNumbers));
     }
 
+    public static int CalculateMax(List<int> numbers)
+    {
+        int max = numbers.Max();
+        return max;
+    }
+
     public static int CalculateAverage(List<int> values)
     {
         int sum = 0;
