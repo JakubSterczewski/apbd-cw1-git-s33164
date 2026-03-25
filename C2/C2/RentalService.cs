@@ -31,13 +31,15 @@ public class RentalService
 
         if (rental != null)
         {
-            rental.ReturnDate = DateTime.Now;
+            rental.ReturnDate = new DateOnly();
             rental.Equipment.IsAvailable = true;
             
-            bool isLate = rental.ReturnDate > rental.DueDate;
-            if (isLate)
+            int lateDays = (rental.ReturnDate.Value.DayNumber - rental.DueDate.DayNumber);
+            
+            if (lateDays > 0)
             {
                 Console.WriteLine("Po terminie");
+                rental.Penalty += lateDays * 10;
             }
         }
         else
