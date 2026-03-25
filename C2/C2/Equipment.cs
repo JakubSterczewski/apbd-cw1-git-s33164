@@ -1,6 +1,6 @@
 namespace C2;
 
-public class Equipment
+public abstract class Equipment
 {
     public int Id {get;}
     public string Producer { get; set; }
