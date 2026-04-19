@@ -1,5 +1,4 @@
 using C6.DTOs;
-using C6.Enums;
 using C6.Exceptions;
 using C6.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -80,6 +79,10 @@ public class AppointmentsController : ControllerBase
         catch (NotFoundException ex)
         {
             return NotFound(new ErrorResponseDto { Message = ex.Message });
+        }
+        catch (ConflictException ex)
+        {
+            return Conflict(new ErrorResponseDto { Message = ex.Message });
         }
     }
 }
